@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="{{ request.lang }}">
+<head>
+  <base href="{{ BaseHref }}">
+  <link rel="shortcut icon" href="favicon.ico">
+  {% include 'meta.twig' %}
+  {% include 'links.twig' %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href='//cdn.jsdelivr.net/npm/yasgui@2.7.19/dist/yasgui.min.css' rel='stylesheet' type='text/css'/>
+  <style>
+
+</style>
+<script>
+
+</script>
+<title>Skosmos</title>
+</head>
+<body class="vocab-stw2">
+  <div class="topbar-white">
+  </div>  
+  {% include 'header.twig' %}
+  <div class="main-container">
+  <h3>About us</h3>
+  <p><strong>ChemSKOS</strong> is a free chemical structure database providing text and structure search accessto structures from different of data sources. You will find here information about atoms, molecules, ions, ion paisr, radicals, radical ions, complexes, conformers, etc. ChemSKOS uses SKOS for representation of chemical data.</p>
+  <p>Involved in the project:</p>
+  <ul>
+    <li>Dominik Tomaszuk (Institute of Informatics, University of Bialystok)</li>
+    <li>Ryszard Łaźny (Institute of Chemistry, University of Bialystok)</li>
+    <li>Jouni Tuominen (HELDIG – Helsinki Centre for Digital Humanities, University of Helsinki, and Semantic Computing Research Group (SeCo), Aalto University)</li>
+  </ul>
+  <p>ChemSKOS uses <a href="http://skosmos.org/">Skosmos</a>. Special thanks to Osma Suominen.</p>
+  <p>ChemSKOS is hosted by <a href="http://uco.uwb.edu.pl/">University Computing Center</a> (<a href="http://uwb.edu.pl/home">University of Bialystok</a>).</p>
+  </div>
+  {% include 'footer.twig' %}
+
+</body>
+</html>

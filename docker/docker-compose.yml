@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+   db:
+     build: ./fuseki
+     restart: always
+     ports:
+       - "3030:3030"
+     environment:
+       FUSEKI_HOME: /opt/fuseki
+       FUSEKI_BASE: /etc/fuseki
+       ADMIN_PASSWORD: pw123
+     volumes:
+       - db-data:/opt/fuseki
+       - db-config:/etc/fuseki/
+     networks:
+       - skosmos-network
+
+   skosmos:
+     depends_on:
+       - db
+     build: ./skosmos
+     ports:
+       - "8000:80"
+       - "3030"
+     restart: always
+     environment:
+       APACHE_RUN_USER: www-data
+       APACHE_RUN_GROUP: www-data
+       APACHE_LOG_DIR: /var/log/apache2
+       APACHE_LOCK_DIR: /var/lock/apache2
+       APACHE_PID_FILE: /var/run/apache2.pid
+     volumes:
+       - skosmos-data:/var/www/html
+       - skosmos-config:/etc
+     networks:
+       - skosmos-network
+
+networks:
+   skosmos-network:
+     driver: bridge
+
+volumes:
+   db-data:
+   db-config:
+   skosmos-data:
+   skosmos-config:

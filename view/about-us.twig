@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="{{ request.lang }}">
+<head>
+  <base href="{{ BaseHref }}">
+  <link rel="shortcut icon" href="favicon.ico">
+  {% include 'meta.twig' %}
+  {% include 'links.twig' %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href='//cdn.jsdelivr.net/npm/yasgui@2.7.19/dist/yasgui.min.css' rel='stylesheet' type='text/css'/>
+  <style>
+
+</style>
+<script>
+
+</script>
+<title>Skosmos</title>
+</head>
+<body class="vocab-stw2">
+  <div class="topbar-white">
+  </div>  
+  {% include 'header.twig' %}
+  <div class="main-container">
+  <p>ChemSKOS is a free chemical structure database providing text and structure search accessto structures from different of data sources. You will find here information about atoms, molecules, ions, ion paisr, radicals, radical ions, complexes, conformers, etc. ChemSKOS uses SKOS for representation of chemical data.</p>
+  <p>Involved in the project:</p>
+  <ul>
+    <li>Dominik Tomaszuk</li>
+    <li>Ryszard Łaźny</li>
+    <li>Jouni Tuominen</li>
+  </ul>
+  <p>ChemSKOS uses <a href="http://skosmos.org/">Skosmos</a>. Special thanks to Osma Suominen.</p>
+  </div>
+  {% include 'footer.twig' %}
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+${BASEURL}/rest/v1/koko/types
+${BASEURL}/rest/v1/koko/types
+${BASEURL}/rest/v1/koko/types
+${BASEURL}/rest/v1/koko/types
+${BASEURL}/rest/v1/koko/types
+${BASEURL}/rest/v1/yso/types
+${BASEURL}/rest/v1/koko/types

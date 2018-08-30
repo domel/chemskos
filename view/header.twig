@@ -1,0 +1,49 @@
+ <div class="contact-bar">
+    <div class="headerbar">
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <a href="mailto:contact@chemskos.com"><img src="/resource/pics/mail.png" alt="icon"> contact@chemskos.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="j-headbar">
+   <div class="headerbar">
+     <div class="row"><div class="headerbar-coloured"></div><div class="header-left">
+       <!--  <h1><a href="chemskos/en/">bbb en<img class="logo" src="resource/pics/logo.png"/></a></h1> -->
+       <h1><a href="chemskos/en/"><img class="logo img-responsive" src="resource/pics/logo.png"/></a></h1>
+     </div>
+     <div class="header-float">
+       <div class="search-vocab-text"><p>Content language</p></div>    <form class="navbar-form" role="search" name="text-search" action="chemskos/en/search">
+         <input style="display: none" name="clang" value="en" id="lang-input">
+         <div class="input-group">
+           <div class="input-group-btn lang-select">
+             <label class="sr-only" for="lang-dropdown-toggle">Content and search language</label>
+             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="lang-dropdown-toggle">English</button>
+             <ul class="dropdown-menu">
+               <li><a href="chemskos/en/" class="lang-button" hreflang="en">English</a></li>
+               <li><a href="chemskos/en/?clang=fi" class="lang-button" hreflang="fi">Finnish</a></li>
+               <li><a href="chemskos/en/?clang=sv" class="lang-button" hreflang="sv">Swedish</a></li>
+               <li><a href="chemskos/en/?clang=en&anylang=on" class="lang-button lang-button-all">Search language: any</a><input name="anylang" type="checkbox"></li>
+             </ul>
+           </div><!-- /btn-group -->
+           <label class="sr-only" for="search-field">Enter search term</label>
+           <input id="search-field" type="text" class="form-control" name="q" value="">
+           <div class="input-group-btn">
+             <label class="sr-only" for="search-all-button">Submit search</label>
+             <button id="search-all-button" type="submit" class="btn btn-primary">Search</button>
+           </div>
+         </div>
+         <div id="search-from-all-vocabularies-radio-buttons">
+           <input type="radio" id="all-languages-true" name="anylang" value="on"
+           onClick="createCookie('SKOSMOS_SEARCH_ALL', this.value , 365);" />
+         </div>
+       </form>
+     </div>
+     <div class="menu-new">
+       <ul class="swsearch">
+         <li><a href="/chemskos/en/sparql">SPARQL endopint</a></li>
+         <li><a href="/chemskos/en/structure">Structure search</a></li>
+       </ul></div>
+     </div>  </div>
+   </div>

@@ -1,0 +1,10 @@
+${BASEURL}/rest/v1/yso/narrowerTransitive?uri=http://www.yso.fi/onto/yso/p19378&lang=en
+${BASEURL}/rest/v1/yso/narrowerTransitive?uri=http://www.yso.fi/onto/yso/p19378&lang=en
+${BASEURL}/rest/v1/yso/narrowerTransitive?uri=http://www.yso.fi/onto/yso/p4020
+${BASEURL}/rest/v1/yso/narrowerTransitive?uri=http://www.yso.fi/onto/yso/p4153&lang=en&group=%20http://www.yso.fi/onto/yso/p26555
+${BASEURL}/rest/v1/yso/narrowerTransitive?uri=http://www.yso.fi/onto/yso/p4153&lang=en
+${BASEURL}/rest/v1/yso/narrowerTransitive?uri=http://www.yso.fi/onto/yso/p19378&lang=en
+${BASEURL}/rest/v1/yso/narrowerTransitive?uri=http://www.yso.fi/onto/yso/p9708&lang=en
+${BASEURL}/rest/v1/yso/narrowerTransitive?uri=http://www.yso.fi/onto/yso/p19378&lang=en
+${BASEURL}/rest/v1/yso/narrowerTransitive?uri=http://www.yso.fi/onto/yso/p9708
+${BASEURL}/rest/v1/yso/narrowerTransitive?uri=http://www.yso.fi/onto/yso/p19378&lang=en

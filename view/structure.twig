@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="{{ request.lang }}">
+<head>
+  <base href="{{ BaseHref }}">
+  <link rel="shortcut icon" href="favicon.ico">
+  {% include 'meta.twig' %}
+  {% include 'links.twig' %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="http://partridgejiang.github.io/Kekule.js/demos/libs/raphael-min.2.0.1.js"></script>
+  <script src="http://partridgejiang.github.io/Kekule.js/demos/libs/kekule/kekule.js?modules=chemWidget,algorithm"></script>
+  <link rel="stylesheet" type="text/css" href="http://partridgejiang.github.io/Kekule.js/demos/libs/kekule/themes/default/kekule.css" />
+  <style>
+  .K-Chem-Dialog-Choose-File-Format-FormatBox option {
+   display:none;
+ }
+ .K-Chem-Dialog-Choose-File-Format-FormatBox option[selected] {
+   display:block;
+ }
+ .K-Chem-Dialog-Choose-File-Format-FormatBox option[value=smi] {
+   display:block;
+ }
+ .K-Chem-NewDoc {
+   display:none!important;
+ }
+ .K-Chem-ArrowLineIaController {
+   display:none!important;
+ }
+ .K-Chem-TextImageIaController {
+   display:none!important;
+ }
+ .K-Chem-Toggle-Inspector {
+   display:none!important;
+ }
+ .K-Chem-SaveFile .K-Pri-Glyph-Content {
+   background-position: -676px 0!important;;
+ }
+      /*.K-Res-Button-YesOk {
+         display:none!important;
+         }*/
+         .K-Res-Button-NoCancel .K-Pri-Glyph-Content {
+           display:none!important;
+         }
+         .K-Res-Button-NoCancel {
+           width: 99%;
+           font-weight: bold;
+           font-size: 120%!important;
+         }
+         .K-Toolbar select {
+           display:none!important;
+         }
+         .K-ComboBox-TextWrapper {
+           display:none!important;
+         }
+         .K-Chem-FormulaIaController {
+           display:none!important;
+         }
+       </style>
+       <script>
+        var chemEditor;
+        var chemComposer
+        function init()
+        {
+         var elem = document.getElementById('chemComposer');
+         var chemEditor = new Kekule.Editor.ChemSpaceEditor(document, null, Kekule.Render.RendererType.R2D);
+         chemComposer = new Kekule.Editor.Composer(elem, chemEditor);
+
+			// adjust size
+			//adjustSize();
+
+			//window.onresize = adjustSize;
+		}
+		//function adjustSize()
+		//{
+		//	var dim = Kekule.HtmlElementUtils.getViewportDimension(document);
+		//	chemComposer.setWidth(dim.width - 50 + 'px').setHeight(dim.height - 30 + 'px');
+		//}
+
+		Kekule.X.domReady(init);
+	</script>
+  <title>Skosmos</title>
+</head>
+<body class="vocab-stw2">
+  <div class="topbar-white">
+  </div>    <!--<div class="j-headbar">
+  <div class="headerbar">
+    <div class="row"><div class="headerbar-coloured"></div><div class="header-left">
+  <h1><a href="stw2/en/">bbb en<img class="logo" src="resource/pics/logo.png"/></a></h1> 
+  <h1><a href="stw2/en/"><img class="logo img-responsive" src="resource/pics/logo.png"/></a></h1>
+
+</div>
+
+<div class="header-float">
+
+  <div class="search-vocab-text"><p>Content language</p></div>    <form class="navbar-form" role="search" name="text-search" action="stw2/en/search">
+    <input style="display: none" name="clang" value="en" id="lang-input">
+    <div class="input-group">
+      <div class="input-group-btn lang-select">
+        <label class="sr-only" for="lang-dropdown-toggle">Content and search language</label>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="lang-dropdown-toggle">English</button>
+        <ul class="dropdown-menu">
+                            <li><a href="stw2/en/" class="lang-button" hreflang="en">English</a></li>
+                    <li><a href="stw2/en/?clang=fi" class="lang-button" hreflang="fi">Finnish</a></li>
+                    <li><a href="stw2/en/?clang=sv" class="lang-button" hreflang="sv">Swedish</a></li>
+                            <li><a href="stw2/en/?clang=en&anylang=on" class="lang-button lang-button-all">Search language: any</a><input name="anylang" type="checkbox"></li>
+        </ul>
+      </div> /btn-group 
+      <label class="sr-only" for="search-field">Enter search term</label>
+      <input id="search-field" type="text" class="form-control" name="q" value="">
+      <div class="input-group-btn">
+        <label class="sr-only" for="search-all-button">Submit search</label>
+        <button id="search-all-button" type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+    <div id="search-from-all-vocabularies-radio-buttons">
+      <input type="radio" id="all-languages-true" name="anylang" value="on"
+      onClick="createCookie('SKOSMOS_SEARCH_ALL', this.value , 365);" />
+    </div>
+      </form>
+</div>
+<div class="menu-new">
+<ul class="swsearch">
+<li><a href="/stw2/en/sparql">SPARQL endopint</a></li>
+<li><a href="/stw2/en/structure">Structure search</a></li>
+</ul></div>
+</div>  </div>
+</div> -->
+{% include 'header.twig' %}
+
+<div class="main-container">
+
+	<div id="chemComposer" style="width:100%; height:75vh"></div>
+</div>
+{% include 'footer.twig' %}
+<script>
+  $('.K-Chem-SaveFile').removeAttr( "title" );
+  $('.K-Chem-SaveFile').attr("title","Search Wizard");
+
+  $('body').one('DOMNodeInserted', '.K-Chem-Dialog-Choose-File-Format', function () {
+   $('.K-Chem-Dialog-Choose-File-Format-FormatBox option[value=cml]').removeAttr( "selected" );
+   $( ".K-Chem-Dialog-Choose-File-Format-FormatBox option:eq(0)" ).before( '<option selected="selected">Select format</option>' );
+   $('.K-Res-Button-YesOk').css('display', 'none');
+   $('.K-Res-Button-NoCancel .K-Text-Content').text('Select');
+ });
+
+  $('body').on('DOMNodeInserted', '.K-Chem-Dialog-Choose-File-Format', function () {
+    setTimeout(function() {
+      $('.K-Chem-Dialog-Choose-File-Format-FormatBox').trigger('change');
+    }, 150);
+    $(".K-Chem-Dialog-Choose-File-Format-FormatBox").change(function(){
+      $('.K-TextEditor-TextArea').css('visibility', 'hidden');
+      var smilesw = $('.K-TextEditor-TextArea').val();
+      console.log(smilesw);
+      smilesw = smilesw.replace(/[\])}[{(]/g, '');
+      if (smilesw.charAt(0) != '<') {
+        $('.K-TextEditor-TextArea').css('visibility', 'visible');
+        $('#search-field').val(smilesw);
+        $$( "#search-field" ).focus();
+      }
+    });
+  });
+
+  $( document ).ready(function() {
+    $('#search-field').val(' ');
+  });
+
+</script>
+<!--  <div class="search-vocab-text">  <form class="navbar-form" role="search" name="text-search" action="stw2/en/search">
+    <input style="display: none" name="clang" value="en" id="lang-input">
+    <div class="input-group">
+      <label class="sr-only" for="search-field">Enter search term</label>
+      <input id="search-field" class="form-control" name="q" type="text" autofocus>
+      <div class="input-group-btn">
+        <label class="sr-only" for="search-all-button">Submit search</label>
+        <button id="search-all-button" type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+    <div id="search-from-all-vocabularies-radio-buttons">
+      <input id="all-languages-true" name="anylang" value="on" onclick="createCookie('SKOSMOS_SEARCH_ALL', this.value , 365);" type="radio">
+    </div>
+      </form>
+
+
+    </div> -->
+  </body>
+  </html>

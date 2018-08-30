@@ -1,0 +1,13 @@
+${BASEURL}/rest/v1/yso/topConcepts?lang=en&scheme=http://finto.fi/yso/fi/page/p9708
+${BASEURL}/rest/v1/yso/topConcepts?lang=fi
+${BASEURL}/rest/v1/yso/topConcepts?lang=fi
+${BASEURL}/rest/v1/yso/topConcepts?lang=fi
+${BASEURL}/rest/v1/mesh/topConcepts?scheme=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fmesh%2Fconceptscheme&lang=en
+${BASEURL}/rest/v1/yso/topConcepts?lang=fi
+${BASEURL}/rest/v1/mesh/topConcepts?scheme=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fmesh%2Fconceptscheme&lang=fi
+${BASEURL}/rest/v1/yso/topConcepts
+${BASEURL}/rest/v1/mesh/topConcepts?scheme=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fmesh%2Fconceptscheme&lang=fi
+${BASEURL}/rest/v1/yso/topConcepts?lang=fi
+${BASEURL}/rest/v1/yso/topConcepts?lang=fi
+${BASEURL}/rest/v1/yso/topConcepts?lang=fi
+${BASEURL}/rest/v1/yso/topConcepts?lang=fi

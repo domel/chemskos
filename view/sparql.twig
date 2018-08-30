@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="{{ request.lang }}">
+<head>
+  <base href="{{ BaseHref }}">
+  <link rel="shortcut icon" href="favicon.ico">
+  {% include 'meta.twig' %}
+  {% include 'links.twig' %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href='//cdn.jsdelivr.net/npm/yasgui@2.7.19/dist/yasgui.min.css' rel='stylesheet' type='text/css'/>
+  <style>
+
+</style>
+<script>
+
+</script>
+<title>Skosmos</title>
+</head>
+<body class="vocab-stw2">
+  <div class="topbar-white">
+  </div>  
+  {% include 'header.twig' %}
+    <div class="main-container">
+      <div id='yasgui'></div>
+    </div>
+{% include 'footer.twig' %}
+    <script src='//cdn.jsdelivr.net/npm/yasgui@2.7.19/dist/yasgui.min.js'></script>
+    <script type="text/javascript">
+     var yasgui = YASGUI(document.getElementById("yasgui"), {
+        //Uncomment below to change the default endpoint
+        //Note: If you've already opened the YASGUI page before, you should first clear your
+        //local-storage cache before you will see the changes taking effect
+        yasqe:{sparql:{
+         endpoint:'http://sparql.chemskos.com/skosmos/sparql',
+         defaultGraphs: ['http://chemskos.com/']
+       }
+     }
+   });
+ </script>
+
+</body>
+</html>
